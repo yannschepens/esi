@@ -1,0 +1,16 @@
+version: "2.7"
+services:
+  node:
+    image: node:19-alpine
+    working_dir: /usr/app
+    volumes:
+    - .:/usr/app
+    command: "yarn run watch"
+
+  web:
+    image: httpd:2.4-alpine
+    volumes:
+      - ./sample/web/confs/my-httpd.conf:/usr/local/apache2/conf/httpd.conf
+      - ./sample/web/site/:/usr/local/apache2/htdocs/
+    ports:
+      - "80:80"

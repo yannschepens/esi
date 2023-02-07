@@ -1,0 +1,108 @@
+= E(dge) S(ide) I(ncludes)
+
+== Une balise
+
+[source, html]
+----
+<esi:include
+   src="http://example.com/1.html"
+   alt="http://bak.example.com/2.html"
+   onerror="continue" />
+----
+
+[NOTE.speaker]
+====
+C'est une balise HTML
+Découpage de la page
+====
+
+== Histoire
+
+https://www.w3.org/TR/esi-lang/ => Depuis 2001
+https://fr.wikipedia.org/wiki/Edge_Side_Includes
+
+[NOTE.speaker]
+====
+Difficulté pour avoir du cache différent au sein d'une même page.
+Concu par un groupe d'entreprise et proposé au W3C en 2001
+Non approuvé ....
+
+Akamai Technologies, Art Technology Group, BEA Systems, Circadence Corporation, Digital Island, Interwoven, Open Market (FatWire), Oracle Corporation et Vignette Corporation
+====
+
+== Le principe
+
+Image d'une page web avec du contenu ESI
+
+[NOTE.speaker]
+====
+
+====
+
+== Dans le détail
+
+Détailler les cas
+
+[source, html]
+----
+<esi:include
+   src="http://example.com/1.html"
+   alt="http://bak.example.com/2.html"
+   onerror="continue" />
+----
+
+[NOTE.speaker]
+====
+* inclusion de fragments de pages
+* variables pouvant provenir de cookies ou de headers HTTP, puis affichées ou utilisées dans des expressions ESI
+* conditions pour que le balisage tire parti des variables (exemple : selon la valeur d'un cookie)
+* gestion d'erreur, pour qu'un basculement puisse avoir lieu en cas de panne d'un serveur nominal.
+====
+
+
+== Reconstruction par le RPC
+
+Schéma avec la reconstruction de la page
+
+[NOTE.speaker]
+====
+
+====
+
+== Avantages
+
+* Pas besoin de JS
+* Détaché du serveur d'app (!= SSI)
+* Bénéficie de toutes les compétences d'un RPC
+* Reconstruction côté serveur
+* PURGE localisé
+
+[NOTE.speaker]
+====
+SSI : Server Side Includes
+====
+
+== Inconvenients
+
+* Nécessite un RPC
+* Avec pas mal de mémoire vive
+* URL avec des primitives
+* Maitrise de la construction de la page
+* Peut vite partir en grand n'importe quoi
+
+[NOTE.speaker]
+====
+Site de eCommerce avec toutes les vignettes en cache x le nombre de promo dispo
+Donc qui devient inutile
+====
+
+== Cache dans du cache dans cache, etc...
+
+Image avec du cache dans du cache
+
+[NOTE.speaker]
+====
+Intrication de cache
+====
+
+

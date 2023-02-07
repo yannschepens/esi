@@ -1,0 +1,16 @@
+[.entrypoint]
+= ESI : Le cache HTTP en petit bout
+:source-highlighter: highlightjs
+:revealjs_theme: white
+:revealjs_progress: true
+:revealjs_history: true
+:customcss: ./styles/php/stylesheets/style.css
+:revealjsdir: ./node_modules/reveal.js
+:revealjs_defaultTiming: 40
+
+include::pages/start.adoc[leveloffset=+1]
+include::pages/http-cache.adoc[leveloffset=+1]
+include::pages/esi.adoc[leveloffset=+1]
+include::pages/use-cases.adoc[leveloffset=+1]
+include::pages/end.adoc[leveloffset=+1]
+

@@ -1,0 +1,31 @@
+= Les caches HTTP
+
+== Requête/Réponse
+Client/Server
+
+== Headers
+A quoi ça sert ?
+
+== Pragma et Cache-control
+Pour les navigateurs, mais aussi
+
+== Pour les reverses proxy CACHE
+Fonctionnement d'un RPC
+
+== Cas d'usage classiques
+* les assets
+* les pages statiques
+
+== Quelques configurations sympas/classiques
+
+== Retour sur la notion de cache par URL
+
+== Erreur à ne pas faire
+
+-> un cache par page par user, car inutile (jamais frais)
+-> ça bouffe la mémoire pour rien
+
+== Allez plus loin ?
+
+On a une stack qui fonctionne hyper bien depuis des millénaires (j'exagère).
+On ne peut pas aller un peu loin

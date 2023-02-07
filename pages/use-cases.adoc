@@ -1,0 +1,50 @@
+= Cas d'usage courants
+
+== Résoud notre problème
+
+Image avec nos durées de cache différentes
+
+[NOTE.speaker]
+====
+Déjà ça résoud notre problème
+====
+
+== Zone utilisateur
+
+Image avec zone utilisateur
+
+[NOTE.speaker]
+====
+Plus globalement, ça permet de mettre les zones user en mode no-cache
+====
+
+== Mutualisation de cache entre les pages
+
+Image avec du reuse
+
+[NOTE.speaker]
+====
+
+====
+
+== eCommerce
+
+Image avec des prix en moins
+
+[NOTE.speaker]
+====
+Pour les prix spécifiques à chaque client par exemple, ou par promo
+====
+
+== Microfrontend
+
+Image avec de la composition
+
+[NOTE.speaker]
+====
+Plusieurs backs
+====
+
+== Arretez de foutre du JS partout
+
+Alleluia
