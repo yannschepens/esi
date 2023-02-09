@@ -5,37 +5,57 @@
 
 image::yann.png[]
 
-== Mon site web
+== !
 
-image d'un site de e-commerce avec le nom du user
+image::website.png[]
 
 [NOTE.speaker]
 ====
 J'ai un site web en **bip**, on s'en fout du langage
+Un petit site eCommerce avec quelques pages
 
+* categorie/home/article/panier/compte client, etc ...
+* du classique
+
+Je suis sur un stack avec une génération full back (pas de JS et autres conneries de ce genre), du vrai web.
 ====
 
-== Problème de perf
+== Mise en place de cache
 
-Analyse, tout ça tout ça
+* Amélioration des perfs
+* Bonne pratique
+* Analyse de l'usage du site
 
 [NOTE.speaker]
 ====
-Je suis sur un stack avec une génération full back (pas de JS et autres conneries de ce genre), du vrai web.
 J'ai du contenu qui est mis à jour toutes les 2 semaines
 Au lieu de regenerer le contenu à chaque appel
-- cache http
+* cache http
+* cache applicatif
+* pareil on reste sur une approche classique
 ====
 
 == Reverse proxy cache
 
-schéma RP plus back
+image::rp.png[]
 
 [NOTE.speaker]
 ====
 Stratégie classique, cache HTTP
 Varnish, Squid cache,
-explication du schéma et configuration du cache
+On passe sur la gestion du SSL (SSL termination, etc.)
+====
+
+== Fonctionnement du RPC
+
+image::rp-seq.png[]
+
+
+[NOTE.speaker]
+====
+Stratégie classique, cache HTTP
+Varnish, Squid cache,
+On passe sur la gestion du SSL (SSL termination, etc.)
 ====
 
 == Mon "petit" problème

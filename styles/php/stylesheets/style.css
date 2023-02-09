@@ -1,12 +1,18 @@
 .reveal {
-    background-color: #ffffff;
+    background-color: whitesmoke;
     background-image: url("../images/nantes.png");
     background-position: bottom;
     background-repeat: no-repeat;
+    color: #4F5B93;
 }
 
 .reveal section img {
     border: none;
     box-shadow: none;
     background: none;
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+    color: #4F5B93;
+    text-transform: none;
 }
