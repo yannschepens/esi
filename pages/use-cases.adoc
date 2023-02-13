@@ -45,6 +45,15 @@ Image avec de la composition
 Plusieurs backs
 ====
 
+== Cache géolocalisé
+
+[NOTE.speaker]
+====
+Approche Plus général du RPC internationale
+Mais on pourrait aussi le penser pour les ESI
+
+====
+
 == Arretez de foutre du JS partout
 
 Alleluia

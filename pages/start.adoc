@@ -20,19 +20,22 @@ Un petit site eCommerce avec quelques pages
 Je suis sur un stack avec une génération full back (pas de JS et autres conneries de ce genre), du vrai web.
 ====
 
-== Mise en place de cache
+== Mise en place de caches
 
 * Amélioration des perfs
-* Bonne pratique
+* Bonnes pratiques
 * Analyse de l'usage du site
+* Ecoconception
 
 [NOTE.speaker]
 ====
 J'ai du contenu qui est mis à jour toutes les 2 semaines
 Au lieu de regenerer le contenu à chaque appel
+
 * cache http
 * cache applicatif
 * pareil on reste sur une approche classique
+* bonne pratique d'ecoconception
 ====
 
 == Reverse proxy cache
@@ -44,6 +47,8 @@ image::rp.png[]
 Stratégie classique, cache HTTP
 Varnish, Squid cache,
 On passe sur la gestion du SSL (SSL termination, etc.)
+Les requètes passent d'abord par le RPC et finissent dans les backends
+C'est un reverse proxy quoi
 ====
 
 == Fonctionnement du RPC
@@ -53,14 +58,28 @@ image::rp-seq.png[]
 
 [NOTE.speaker]
 ====
-Stratégie classique, cache HTTP
-Varnish, Squid cache,
-On passe sur la gestion du SSL (SSL termination, etc.)
+* Stratégie classique, cache HTTP
+* Varnish, Squid cache, Akamai (pour du)
+* On passe sur la gestion du SSL (SSL termination, etc.)
+* Explication du schéma
+* Ca c'est hyper pratique quand on a beaucoup d'audience
+* On exploite moins (pas) les serveurs et le contenu est rendu tout de suite (pas de calcul)
+* Ex. programme-tv.net : 1 génération pour 10 millions d'utilisateur
 ====
 
 == Mon "petit" problème
 
-Zoom sur le nom de l'utilisateur
+image::website.png[]
+
+[NOTE.speaker]
+====
+J'ai un problème sur ma page pour le cache
+Vous le voyez ?
+====
+
+== Mon "petit" problème
+
+image::website-zoom-user.png[]
 
 [NOTE.speaker]
 ====
@@ -71,23 +90,30 @@ Et encore si ce n'est que ça, ça va, mais je cache des données sensibles ça 
 
 == Qui devient un "gros" problème
 
+image::rp-seq-user-pb.png[]
+
 [NOTE.speaker]
 ====
 Cette zone est présente sur toutes mes pages, donc plus de cache possible pour toute la page.
+* Vous n'avez pas envie de ça .... (banque, commande, etc)
+* et on veut garder du cache
 ====
 
+[transition="slide-in fade-out"]
 == Reflex naturel
 
-image du cerveau reptilien ou d'un reflex chez le medecin
+image::reflexe.png[]
 
 [NOTE.speaker]
 ====
+* On va garder du cache
 Reflex animal chez les devs web
 ====
 
+[transition="fade-in slide-out"]
 == Mettre du JS
 
-Image de JS
+image::reflexe-js.png[]
 
 [NOTE.speaker]
 ====
@@ -103,7 +129,7 @@ Je garde mon cache, mais je charge dynamiquement une partie de la page
 * Modification du code
 * Ajout d'une couche côté client
 * Ajout de bout de JS par ci par là
-* Les prix deviennent dynamique, etc...
+* Les prix deviennent dynamiques
 * etc..
 
 [NOTE.speaker]
@@ -113,7 +139,7 @@ J'exagère, mais c'est souvent le cas, et on fini avec du code spaghetti et une 
 
 == Double stack front/back
 
-Image d'horreur avec les logo angular/react/ etc...
+image::fear.png[]
 
 [NOTE.speaker]
 ====
