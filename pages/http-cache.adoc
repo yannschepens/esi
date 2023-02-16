@@ -1,31 +1,140 @@
 = Les caches HTTP
+:imagesdir: assets/default/images
 
 == Requête/Réponse
-Client/Server
+image::http.png[]
+
+[NOTE.speaker]
+====
+Client envoie une requète, server construit la réponse en fonction de la requète et la renvoie au client.
+Si navigateur :
+* interpretation
+* appel des autres contenus
+* corps non obligatoire
+
+Requête :
+* URL, verbs, headers, corps parfois (typiquement avec du REST ou des forms)
+
+Réponse :
+* Code HTTP, contenu, headers, corps parfois
+
+====
 
 == Headers
-A quoi ça sert ?
+Réponse ET/OU requête
+
+* Informations supplémentaires échangées entre le client et le serveur
+* Par convention et/ou RFC
+* KeyValue
+
+[NOTE.speaker]
+====
+Ex. :
+* Accept-Type, Content-Type
+* Date, Info navigateur
+* Authentication
+* Cookie
+* etc.
+====
 
 == Pragma et Cache-control
-Pour les navigateurs, mais aussi
+
+* Pragma : HTTP/1.0, Cache-control : HTTP/1.1
+** public, private
+** no-cache, no-store, no-transform
+** max-age, max-stale, min-fresh
+** min-vers
+** must-revalidate, proxy-revalidate
+** only-if-cached
+
+[NOTE.speaker]
+====
+Focus sur Pragma et Cache-control, qui nous interesse ici
+On va surtout parler de Cache-control, même si on peut faire pareil avec Pragma
+
+* public/private : cachable par un cache publique
+* max-age, max-stale, min-fresh : durée conservation, contenu périmé, demande de contenu frais pdt la durée de min-fresh
+* min-vers : cache seulement si HTTP > à
+* *-revalidate : doit revalider avec If-modified-since (req HEAD par exemple), tout le monde ou slt proxy
+* only-if-cached : renvoie du contenu que si caché (utile quand faible débit dans des proxys cache locaux)
+
+https://fr.wikipedia.org/wiki/Cache-Control
+====
+
+== Pragma et Cache-control
+
+* Indication de conservation des réponses HTTP
+** Navigateur
+** Tout système étant sur le chemin de l'échange HTTP
+* Surtout sur les assets (JS, CSS, Images)
+* Ajouté par les serveurs web, CDN, application, etc.
+
+[NOTE.speaker]
+====
+Sert à tout le monde, mais surtout :
+
+* navigateur : conservation des assets
+Ajout automatique par les CDN
+Configurable sur les serveurs web
+====
 
 == Pour les reverses proxy CACHE
-Fonctionnement d'un RPC
+
+image::rp-details.png[]
+
+[NOTE.speaker]
+====
+Expliquer le schéma en faisant le focus sur les URLs et les headers
+====
 
 == Cas d'usage classiques
-* les assets
-* les pages statiques
 
-== Quelques configurations sympas/classiques
+image::classic.png[]
 
-== Retour sur la notion de cache par URL
+[NOTE.speaker]
+====
+* les assets en cache long
+* les pages statiques en cache court
+* pas de cache pour les zones personnelles
+====
 
-== Erreur à ne pas faire
+== !
 
--> un cache par page par user, car inutile (jamais frais)
--> ça bouffe la mémoire pour rien
+image::geoloc.png[]
 
-== Allez plus loin ?
+[NOTE.speaker]
+====
+* Cache geolocalisé
+* On garde les serveurs au même endroit
+* On déploie des caches
+* gain perf, ecoconception
+* Akamai => service payant ou CDN
+====
 
+== Erreurs à ne pas faire
+
+* Mettre du cache par user
+* Ne pas utiliser la purge
+* Ne pas versionner ces assets
+* ...
+
+[NOTE.speaker]
+====
+* User: ca bouffe de la mémoire car on va cacher la même page pour tous les utilisateurs et c'est pas utile
+* Purge: ça laisse trainer des trucs dans la mémoire pour rien
+* Versionning : utiliser des versions sur vos urls (en query string), ça permet d'avoir plusieurs versions en mémoire et de simplifier les déploiements (pas de prob de JS en cache plus compatible par exemple)
+
+* Revenons sur mon problème
+====
+
+== Mon "petit" problème
+
+image::website.png[]
+
+[NOTE.speaker]
+====
 On a une stack qui fonctionne hyper bien depuis des millénaires (j'exagère).
-On ne peut pas aller un peu loin
+Qui permet de stocker des fichiers complets et du contenu HTML
+Basé sur une url
+On ne peut pas aller un peu loin ?
+====
