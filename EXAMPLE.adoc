@@ -1,0 +1,69 @@
+Prépa de l'exemple
+Ouvrir :
+* sample/varnish/confs/default.vcl
+* sample/web/confs/extra/httpd-vhosts.conf
+* sample/site/category.html (l. 306)
+
+http://localhost/category.html
+http://localhost:8080/category.html
+http://localhost/parts/user-header.html
+http://localhost:81/prices/price.html
+
+== Exemple 1 : Usage du cache control par le navigateur
+
+http://localhost/category.html
+
+* Montrer l'arbo et la conf vhosts, zoom sur la partie cache control pour les assets.
+* Montrer les logs apache (console docker) en recharge normal (juste la home)
+* Comparer avec un hard reload (tous les assets)
+* Ca prouve l'usage des confs cache control
+
+== Exemple 2 : Zoom sur le problème du "Salut Yann"
+
+=== Cache page complète avec Varnish
+
+* Retour sur http://localhost/category.html
+* On pourrait cacher toute la page, mais => Zoom sur "Salut Yann"
+* Ajout de la conf dans le vhost
+
+<FilesMatch "\.(html)$">
+Header set Cache-Control "max-age=43200, public, must-revalidate"
+</FilesMatch>
+
+* On doit utiliser varnish car les navigateurs vont demander dans tous les cas s'il faut recharger le contenu (log apache avec le 304 après avoir changé le nom)
+* Mise en route de varnish
+* Ouverture de http://localhost:8080/category.html
+* Montrer les logs apache
+
+* Modification de Yann en Toto et afficher sur localhost et localhost:8080
+** Pas de maj sous Varnish alors que modification sur apache
+** Affichage des headers sur le debug (les Varnish etc..) sur les assets et le html
+
+=== ESI
+
+* Affichage de la conf varnish
+** Conf beresp l.36 dans la partie varnish
+
+* Changement du bout de code dans category.html pour ajouter la balise ESI
+** Redemarrage du bordel
+
+* faire appel à http://localhost/parts/user-header.html, pour montrer le contenu pur
+
+* Afficher la disparition sur localhost:80 (apache)
+* Afficher sur localhost:8080 (varnish) et montrer les logs apache pour l'appel de l'ESI
+
+* Modifier le contenu du nom dans user-header.html et un bout dans la page category (genre "Latest ")
+
+* Montrer qu'il n'y a que le nom qui change et en profiter pour montrer les logs apache
+
+== Exemple 3 : micro frontend
+
+* montrer l'url pour le prix : j'ai un autre service qui gère les prix
+* montrer la conf varnish avec le backend sell
+* montrer le fichier category l.706 avec la balise ESI pour le prix
+
+* changer le prix, et faire le refresh (ctrl maj R le navigateur garde toute la page)
+
+Et montrer les logs apache de l'instance sell.
+
+

@@ -11,6 +11,23 @@ services:
     image: httpd:2.4-alpine
     volumes:
       - ./sample/web/confs/my-httpd.conf:/usr/local/apache2/conf/httpd.conf
+      - ./sample/web/confs/extra/:/usr/local/apache2/conf/extra/
       - ./sample/web/site/:/usr/local/apache2/htdocs/
     ports:
       - "80:80"
+
+  varnish:
+    image: varnish:7.2-alpine
+    volumes:
+      - ./sample/varnish/default.vcl:/etc/varnish/default.vcl:ro
+    ports:
+      - "8080:80"
+
+  sell:
+    image: httpd:2.4-alpine
+    volumes:
+      - ./sample/sell/confs/my-httpd.conf:/usr/local/apache2/conf/httpd.conf
+      - ./sample/sell/confs/extra/:/usr/local/apache2/conf/extra/
+      - ./sample/sell/site/:/usr/local/apache2/htdocs/
+    ports:
+      - "81:80"

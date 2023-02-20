@@ -299,13 +299,20 @@
                     <!-- /Navbar Wishlist-->
     
                     <!-- Navbar Login-->
-                    <li class="ms-1 d-none d-lg-inline-block">
-                        <a class="btn btn-link px-2 text-decoration-none d-flex align-items-center"
-                            href="#">
-                            Salut Yann <i class="ri-user-line ri-lg align-middle"></i>
-                        </a>
-                    </li>
+                    <!--
+                                        <li class="ms-1 d-none d-lg-inline-block">
+                                            <a class="btn btn-link px-2 text-decoration-none d-flex align-items-center"
+                                                href="#">
+                                                Salut Yann <i class="ri-user-line ri-lg align-middle"></i>
+                                            </a>
+                                        </li>
+
+                              -->           <!-- -->
+                        <esi:include src="/parts/user-header.html" />
+                    <!-- -->
+
                     <!-- /Navbar Login-->
+
     
                     <!-- Navbar Cart-->
                     <li class="ms-1 d-inline-block position-relative">
@@ -695,8 +702,8 @@
                                     </div> <span class="small fw-bolder ms-2 text-muted"> 4.7 (456)</span>
                                             </div>
                                             <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center"
-                                                href="./product.html">Full Zip Hoodie</a>
-                                                <p class="fw-bolder m-0 mt-2">$1129.99</p>
+                                                href="./product.html">Full Zip  2 Hoodie</a>
+                                                <p class="fw-bolder m-0 mt-2"><esi:include src="/prices/price.html"></p>
                                         </div>
                                     </div>
                                     <!--/ Card Product-->
