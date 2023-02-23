@@ -1,8 +1,9 @@
 .reveal {
     background-color: whitesmoke;
-    background-image: url("../images/nantes.png");
-    background-position: bottom;
-    background-repeat: no-repeat;
+    background-image: url("../images/nantes.png"), url("../images/afup.png"), url("../images/onepoint_black.png");
+    background-position: bottom, top right, bottom left;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: auto, 80px, 200px;
     color: #4F5B93;
 }
 

@@ -3,8 +3,10 @@ Ouvrir :
 * sample/varnish/confs/default.vcl
 * sample/web/confs/extra/httpd-vhosts.conf
 * sample/site/category.html (l. 306)
+* sample/site/index.html (l. 531)
 
 http://localhost/category.html
+http://localhost:8080/index.html
 http://localhost:8080/category.html
 http://localhost/parts/user-header.html
 http://localhost:81/prices/price.html
@@ -65,5 +67,9 @@ Header set Cache-Control "max-age=43200, public, must-revalidate"
 * changer le prix, et faire le refresh (ctrl maj R le navigateur garde toute la page)
 
 Et montrer les logs apache de l'instance sell.
+
+== Exemple 4 : Reuse
+
+*
 
 

@@ -1,3 +1,6 @@
-= Merci à
+= Merci :)
+
+
+== Sources
 
 * https://github.com/PixelRocket-Shop/alpine-html-bootstrap/
