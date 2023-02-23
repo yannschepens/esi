@@ -1,4 +1,21 @@
 = E(dge) S(ide) I(ncludes)
+:imagesdir: assets/default/images
+
+== !
+
+image::castor.png[]
+
+[NOTE.speaker]
+====
+Difficulté pour avoir du cache différent au sein d'une même page.
+Concu par un groupe d'entreprise et proposé au W3C en 2001
+Non approuvé ....
+
+Akamai Technologies, Art Technology Group, BEA Systems, Circadence Corporation, Digital Island, Interwoven, Open Market (FatWire), Oracle Corporation et Vignette Corporation
+
+https://www.w3.org/TR/esi-lang/ => Depuis 2001
+https://fr.wikipedia.org/wiki/Edge_Side_Includes
+====
 
 == Une balise
 
@@ -13,60 +30,76 @@
 [NOTE.speaker]
 ====
 C'est une balise HTML
-Découpage de la page
-====
-
-== Histoire
-
-https://www.w3.org/TR/esi-lang/ => Depuis 2001
-https://fr.wikipedia.org/wiki/Edge_Side_Includes
-
-[NOTE.speaker]
-====
-Difficulté pour avoir du cache différent au sein d'une même page.
-Concu par un groupe d'entreprise et proposé au W3C en 2001
-Non approuvé ....
-
-Akamai Technologies, Art Technology Group, BEA Systems, Circadence Corporation, Digital Island, Interwoven, Open Market (FatWire), Oracle Corporation et Vignette Corporation
+Permet de découper les pages en plusieurs morceaux afin d'avoir des durées de cache différents
 ====
 
 == Le principe
 
-Image d'une page web avec du contenu ESI
+image::split-page-esi.png[]
 
 [NOTE.speaker]
 ====
 
+====
+
+== Reconstruction par le RPC
+
+image::esi-seq.png[ESI,75%]
+
+[NOTE.speaker]
+====
+Sans cache
+Explication du schéma
+====
+
+== Reconstruction par le RPC
+
+image::esi-seq-cache.png["ESI cache",75%]
+
+[NOTE.speaker]
+====
+Avec cache
+Explication du schéma
+====
+
+== Imaginons
+
+image::imagine.png["ESI cache",75%]
+
+[NOTE.speaker]
+====
+On peut découper notre page et avoir des durées de cache différentes en fonction des parties
+Reuse entre les pages (vignette articles)
+Cache dans du cache (prix en no cache par exemple)
 ====
 
 == Dans le détail
 
-Détailler les cas
-
 [source, html]
 ----
-<esi:include
-   src="http://example.com/1.html"
-   alt="http://bak.example.com/2.html"
-   onerror="continue" />
+<!-- fragment -->
+<esi:include src="/parts/prix-articles/2?promotion=12"
+alt="https://backup/parts/vignette-articles/2"/>
+
+<!-- query string reuse -->
+<esi:include src="/search?query=$(QUERY_STRING{query})" />
+
+<!-- condition -->
+<esi:choose>
+    <esi:when test="...">
+
+<!-- try -->
+<esi:try>
+    <esi:attempt> ...
+    <esi:except> ...
 ----
 
 [NOTE.speaker]
 ====
-* inclusion de fragments de pages
-* variables pouvant provenir de cookies ou de headers HTTP, puis affichées ou utilisées dans des expressions ESI
-* conditions pour que le balisage tire parti des variables (exemple : selon la valeur d'un cookie)
-* gestion d'erreur, pour qu'un basculement puisse avoir lieu en cas de panne d'un serveur nominal.
-====
-
-
-== Reconstruction par le RPC
-
-Schéma avec la reconstruction de la page
-
-[NOTE.speaker]
-====
-
+* inclusion de fragments de pages :comme on a fait
+* variables pouvant provenir de cookies ou de headers HTTP, puis affichées ou utilisées dans des expressions ESI : ex.: id d'article
+* conditions pour que le balisage tire parti des variables (exemple : selon la valeur d'un cookie) : ex.: Si EU ou US, taper sur des serveurs différents (geoloc)
+* gestion d'erreur, pour qu'un basculement puisse avoir lieu en cas de panne d'un serveur nominal.  ex.: gestion de fallback
 ====
 
 == Avantages
@@ -80,9 +113,10 @@ Schéma avec la reconstruction de la page
 [NOTE.speaker]
 ====
 SSI : Server Side Includes
+Bénéfique à tous les utilisateurs
 ====
 
-== Inconvenients
+== Inconvénients
 
 * Nécessite un RPC
 * Avec pas mal de mémoire vive
@@ -96,13 +130,4 @@ Site de eCommerce avec toutes les vignettes en cache x le nombre de promo dispo
 Donc qui devient inutile
 ====
 
-== Cache dans du cache dans cache, etc...
-
-Image avec du cache dans du cache
-
-[NOTE.speaker]
-====
-Intrication de cache
-====
-
-
+== Allons voir des exemples concrets

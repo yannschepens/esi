@@ -2,7 +2,7 @@
 
 == Résoud notre problème
 
-Image avec nos durées de cache différentes
+image::example 1 - our problem.png[EX1,80%]
 
 [NOTE.speaker]
 ====
@@ -11,16 +11,16 @@ Déjà ça résoud notre problème
 
 == Zone utilisateur
 
-Image avec zone utilisateur
+image::example 2 - user part.png[EX2,50%]
 
 [NOTE.speaker]
 ====
 Plus globalement, ça permet de mettre les zones user en mode no-cache
 ====
 
-== Mutualisation de cache entre les pages
+== Mutualisation
 
-Image avec du reuse
+image::example 3 - share.png[EX3,80%]
 
 [NOTE.speaker]
 ====
@@ -29,7 +29,7 @@ Image avec du reuse
 
 == eCommerce
 
-Image avec des prix en moins
+image::example 4 - price.png[EX4,70%]
 
 [NOTE.speaker]
 ====
@@ -38,7 +38,7 @@ Pour les prix spécifiques à chaque client par exemple, ou par promo
 
 == Microfrontend
 
-Image avec de la composition
+image::example 5 - microfrontend.png[EX5,80%]
 
 [NOTE.speaker]
 ====
@@ -47,6 +47,8 @@ Plusieurs backs
 
 == Cache géolocalisé
 
+image::example 6 - geoloc.png[]
+
 [NOTE.speaker]
 ====
 Approche Plus général du RPC internationale
@@ -54,6 +56,6 @@ Mais on pourrait aussi le penser pour les ESI
 
 ====
 
-== Arretez de foutre du JS partout
+== Arrêtez de foutre du JS partout
 
-Alleluia
+(et plus de problème de CORS)
