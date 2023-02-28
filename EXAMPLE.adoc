@@ -1,6 +1,7 @@
 Prépa de l'exemple
 Ouvrir :
 * sample/varnish/confs/default.vcl
+* sample/sell/confs/extra/httpd-vhosts.conf
 * sample/web/confs/extra/httpd-vhosts.conf
 * sample/site/category.html (l. 306)
 * sample/site/index.html (l. 531)
