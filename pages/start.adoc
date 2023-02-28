@@ -95,6 +95,7 @@ image::rp-seq-user-pb.png[]
 [NOTE.speaker]
 ====
 Cette zone est présente sur toutes mes pages, donc plus de cache possible pour toute la page.
+
 * Vous n'avez pas envie de ça .... (banque, commande, etc)
 * et on veut garder du cache
 ====

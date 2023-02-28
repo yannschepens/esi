@@ -8,14 +8,17 @@ image::http.png[]
 ====
 Client envoie une requète, server construit la réponse en fonction de la requète et la renvoie au client.
 Si navigateur :
+
 * interpretation
 * appel des autres contenus
 * corps non obligatoire
 
 Requête :
+
 * URL, verbs, headers, corps parfois (typiquement avec du REST ou des forms)
 
 Réponse :
+
 * Code HTTP, contenu, headers, corps parfois
 
 ====
@@ -30,6 +33,7 @@ Réponse ET/OU requête
 [NOTE.speaker]
 ====
 Ex. :
+
 * Accept-Type, Content-Type
 * Date, Info navigateur
 * Authentication
