@@ -20,7 +20,7 @@ Plus globalement, ça permet de mettre les zones user en mode no-cache
 
 == Mutualisation
 
-image::example 3 - share.png[EX3,80%]
+image::example 3 - share.png[EX3,75%]
 
 [NOTE.speaker]
 ====

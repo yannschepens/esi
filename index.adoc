@@ -1,10 +1,10 @@
 [.entrypoint]
 = ESI : Le cache HTTP en petit bout
 :source-highlighter: highlightjs
-:revealjs_theme: white
+:revealjs_theme: black
 :revealjs_progress: true
 :revealjs_history: true
-:customcss: ./styles/php/stylesheets/style.css
+:customcss: ./styles/volcamp/stylesheets/style.css
 :revealjsdir: ./node_modules/reveal.js
 :revealjs_defaultTiming: 40
 

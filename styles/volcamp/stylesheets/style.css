@@ -1,0 +1,56 @@
+.reveal.slide {
+    background-image: url("../images/onepoint-white.png"), url("../images/logo.svg"), url("../images/chainedespuys.jpg");
+    background-size: 200px, 150px, cover;
+    background-position:  bottom center, bottom left, bottom;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    color: white;
+}
+
+.entrypoint, .sponso {
+    background-image: url("./intro-volcamp.png");
+    background-size: cover;
+    padding: 0 !important;
+}
+
+.entrypoint * , .sponso *{
+    display: none;
+    opacity: 0 !important;
+}
+
+.sponso {
+    background-image: url("./sponso.png");
+}
+
+
+
+.reveal section img {
+    padding: 25px;
+    background: white;
+}
+
+.reveal section.no-img-background img {
+    padding: 25px;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.reveal h2, .reveal h3 {
+    text-transform: none;
+}
+
+.reveal h3 {
+    font-size: 1.0em;
+}
+
+code {
+    font-size: 0.7em;
+}
+
+.reveal .controls {
+    color: forestgreen;
+}
+
+.reveal .progress {
+    color: forestgreen;
+}

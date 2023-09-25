@@ -35,7 +35,7 @@ Permet de découper les pages en plusieurs morceaux afin d'avoir des durées de 
 
 == Le principe
 
-image::split-page-esi.png[]
+image::split-page-esi.png[principle, 80%]
 
 [NOTE.speaker]
 ====
@@ -64,7 +64,7 @@ Explication du schéma
 
 == Imaginons
 
-image::imagine.png["ESI cache",75%]
+image::imagine.png["ESI cache",60%]
 
 [NOTE.speaker]
 ====

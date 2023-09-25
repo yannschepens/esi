@@ -1,6 +1,7 @@
 = Les présentations
 :imagesdir: assets/default/images
 
+[.no-img-background]
 == !
 
 image::yann.png[]
@@ -69,7 +70,7 @@ image::rp-seq.png[]
 
 == Mon "petit" problème
 
-image::website.png[]
+image::website.png[web, 80%]
 
 [NOTE.speaker]
 ====
@@ -79,7 +80,7 @@ Vous le voyez ?
 
 == Mon "petit" problème
 
-image::website-zoom-user.png[]
+image::website-zoom-user.png[web-zoom, 80%]
 
 [NOTE.speaker]
 ====

@@ -93,7 +93,7 @@ Expliquer le schéma en faisant le focus sur les URLs et les headers
 
 == Cas d'usage classiques
 
-image::classic.png[]
+image::classic.png[ucc, 70%]
 
 [NOTE.speaker]
 ====
@@ -133,7 +133,7 @@ image::geoloc.png[]
 
 == Mon "petit" problème
 
-image::website.png[]
+image::website.png[web-zoom, 80%]
 
 [NOTE.speaker]
 ====
