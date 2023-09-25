@@ -3,8 +3,8 @@ Ouvrir :
 * sample/varnish/confs/default.vcl
 * sample/sell/confs/extra/httpd-vhosts.conf
 * sample/web/confs/extra/httpd-vhosts.conf
-* sample/site/category.html (l. 306)
-* sample/site/index.html (l. 531)
+* sample/web/site/category.html (l. 306)
+* sample/web/site/index.html (l. 531)
 
 http://localhost/category.html
 http://localhost:8080/index.html
@@ -71,6 +71,6 @@ Et montrer les logs apache de l'instance sell.
 
 == Exemple 4 : Reuse
 
-*
+* Bloc de prix sur la page de catégorie et la page d'index, reuse sur l'index L.531
 
 
