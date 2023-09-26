@@ -7,7 +7,7 @@
 }
 
 .entrypoint, .sponso {
-    background-image: url("./intro-volcamp.png");
+    background-image: url("../images/intro-volcamp.png");
     background-size: cover;
     padding: 0 !important;
 }
