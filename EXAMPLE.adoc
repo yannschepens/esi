@@ -1,11 +1,19 @@
 Prépa de l'exemple
+
+Lancer le docker-compose dans un terminal et zoomer
+Ouvrir les pages en dezoomant pour avoir tout le contenu
+Ouvrir le fichier d'exemple en bloc note à côté
+
 Ouvrir :
 * sample/varnish/confs/default.vcl
 * sample/sell/confs/extra/httpd-vhosts.conf
 * sample/web/confs/extra/httpd-vhosts.conf
 * sample/web/site/category.html (l. 306)
 * sample/web/site/index.html (l. 531)
+* sample/web/parts/user-header.html
 
+
+http://localhost
 http://localhost/category.html
 http://localhost:8080/index.html
 http://localhost:8080/category.html
@@ -40,7 +48,7 @@ Header set Cache-Control "max-age=43200, public, must-revalidate"
 
 * Modification de Yann en Toto et afficher sur localhost et localhost:8080
 ** Pas de maj sous Varnish alors que modification sur apache
-** Affichage des headers sur le debug (les Varnish etc..) sur les assets et le html
+** Affichage des headers sur le debug (les Varnish etc..) sur les assets et le html (X-Cache)
 
 === ESI
 
@@ -48,7 +56,7 @@ Header set Cache-Control "max-age=43200, public, must-revalidate"
 ** Conf beresp l.36 dans la partie varnish
 
 * Changement du bout de code dans category.html pour ajouter la balise ESI
-** Redemarrage du bordel
+** !!!! Redemarrage de la stack (pour vider le cache varnish)
 
 * faire appel à http://localhost/parts/user-header.html, pour montrer le contenu pur
 
@@ -56,6 +64,7 @@ Header set Cache-Control "max-age=43200, public, must-revalidate"
 * Afficher sur localhost:8080 (varnish) et montrer les logs apache pour l'appel de l'ESI
 
 * Modifier le contenu du nom dans user-header.html et un bout dans la page category (genre "Latest ")
+* actualise avec ctrl maj R sinon il va pas recharger
 
 * Montrer qu'il n'y a que le nom qui change et en profiter pour montrer les logs apache
 

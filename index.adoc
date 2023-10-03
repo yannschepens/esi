@@ -6,7 +6,7 @@
 :revealjs_history: true
 :customcss: ./styles/volcamp/stylesheets/style.css
 :revealjsdir: ./node_modules/reveal.js
-:revealjs_defaultTiming: 45
+:revealjs_defaultTiming: 40
 
 include::pages/start.adoc[leveloffset=+1]
 include::pages/http-cache.adoc[leveloffset=+1]
