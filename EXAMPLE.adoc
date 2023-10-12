@@ -5,6 +5,7 @@ Ouvrir les pages en dezoomant pour avoir tout le contenu
 Ouvrir le fichier d'exemple.Adoc en bloc note à côté
 
 Ouvrir :
+
 * sample/varnish/confs/default.vcl
 * sample/sell/confs/extra/httpd-vhosts.conf
 * sample/web/confs/extra/httpd-vhosts.conf
