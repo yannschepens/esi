@@ -2,7 +2,7 @@ Prépa de l'exemple
 
 Lancer le docker-compose dans un terminal et zoomer
 Ouvrir les pages en dezoomant pour avoir tout le contenu
-Ouvrir le fichier d'exemple en bloc note à côté
+Ouvrir le fichier d'exemple.Adoc en bloc note à côté
 
 Ouvrir :
 * sample/varnish/confs/default.vcl
@@ -11,67 +11,103 @@ Ouvrir :
 * sample/web/site/category.html (l. 306)
 * sample/web/site/index.html (l. 531)
 * sample/web/parts/user-header.html
+* sample/sell/site/prices.html
 
 
-http://localhost
+http://localhost/index.html
 http://localhost/category.html
 http://localhost:8080/index.html
 http://localhost:8080/category.html
 http://localhost/parts/user-header.html
 http://localhost:81/prices/price.html
 
+== Exemple 0 : présentation de l'environnement de démo
+
+Docker compose avec varnish :8080, sell :81 et web :80
+
+Bien indiquer qu'ici, je fais du html pur sinon je vais faire du PHP et vous n'aimez pas ça. Mais vous pouvez utiliser le langage que vous voulez.
+
+
 == Exemple 1 : Usage du cache control par le navigateur
+
+Etape 1 : On montre l'usage du cache par le navigateur pour les assets
 
 http://localhost/category.html
 
-* Montrer l'arbo et la conf vhosts, zoom sur la partie cache control pour les assets.
+* Montrer l'arbo et la conf vhosts, zoom sur la partie cache control pour les assets. et expliquer ce que ça fait
 * Montrer les logs apache (console docker) en recharge normal (juste la home)
+** Expliquer le 304 avec la requête HEAD
 * Comparer avec un hard reload (tous les assets)
-* Ca prouve l'usage des confs cache control
+* Ca prouve l'usage des confs cache control par le navigateur (voir console debug)
+** Donc configurer vos caches controls correctement
+
+* Par contre, on a toujours le 304, et chaque utilisateur différent va retaper sur le serveur pour générer le contenu
 
 == Exemple 2 : Zoom sur le problème du "Salut Yann"
 
 === Cache page complète avec Varnish
 
+Etape 1 : On met du cache sur la page complète, meme technique pour les assets mais pour la page html
+
 * Retour sur http://localhost/category.html
-* On pourrait cacher toute la page, mais => Zoom sur "Salut Yann"
 * Ajout de la conf dans le vhost
 
 <FilesMatch "\.(html)$">
 Header set Cache-Control "max-age=43200, public, must-revalidate"
 </FilesMatch>
 
-* On doit utiliser varnish car les navigateurs vont demander dans tous les cas s'il faut recharger le contenu (log apache avec le 304 après avoir changé le nom)
+* Redemarrage docker compose (pour prise en compte conf apache)
+* On doit utiliser varnish car les navigateurs vont demander dans tous les cas s'il faut recharger le contenu (log apache avec le 304 après avoir changé le nom), et si c'est un autre utilisateur, il va de toute façon faire regenerer la page
+
+Etape 2 : Montrer le passage par varnish, log apache vide et header varnish
+
 * Mise en route de varnish
 * Ouverture de http://localhost:8080/category.html
-* Montrer les logs apache
+* Montrer les logs apache sur le terminal : Plus rien, Top
+* Affichage des headers sur le debug (les Varnish etc..) sur les assets et le html (X-Cache)
 
-* Modification de Yann en Toto et afficher sur localhost et localhost:8080
+Etape 3 : Le problème en cachant une page complète, le Yann qui ne se modifie pas
+
+* Modification de Yann en Toto et afficher sur localhost/category.html et localhost:8080/category.html
 ** Pas de maj sous Varnish alors que modification sur apache
-** Affichage des headers sur le debug (les Varnish etc..) sur les assets et le html (X-Cache)
+
+* On a un problème
 
 === ESI
+
+Etape 1 : On va faire générer le code du nom du user par une page
+
+* faire appel à http://localhost/parts/user-header.html, pour montrer le contenu pur
+
+Etape 2 : Activation des ESI et mise en balise ESI du Nom de l'user, pour gérer le souci
 
 * Affichage de la conf varnish
 ** Conf beresp l.36 dans la partie varnish
 
 * Changement du bout de code dans category.html pour ajouter la balise ESI
-** !!!! Redemarrage de la stack (pour vider le cache varnish)
+** !!!! Redemarrage de la stack (pour vider le cache varnish, car il a caché la page complète précedemment)
 
-* faire appel à http://localhost/parts/user-header.html, pour montrer le contenu pur
+Etape 3 : On montre que le navigateur d'interprete pas les ESI et que Varnish fait le job
 
-* Afficher la disparition sur localhost:80 (apache)
-* Afficher sur localhost:8080 (varnish) et montrer les logs apache pour l'appel de l'ESI
+* Afficher la disparition sur localhost:80/category.html (apache)
+* Afficher sur localhost:8080/category.html (varnish)
+* Montrer les logs apache pour l'appel de l'ESI (l'appel du bloc) Ctrl-Maj-R sinon je prend la durée de cache de la page
+
+Etape 4 : Modifier le contenu du user-header (en indiquant que généralement y'a du code serveur qui le fait automatiquement)
 
 * Modifier le contenu du nom dans user-header.html et un bout dans la page category (genre "Latest ")
 * actualise avec ctrl maj R sinon il va pas recharger
 
 * Montrer qu'il n'y a que le nom qui change et en profiter pour montrer les logs apache
 
+
+
 == Exemple 3 : micro frontend
 
+Etape 1 : On peut suivre le même principe mais en appelant carrement un autre service (aka)
+
 * montrer l'url pour le prix : j'ai un autre service qui gère les prix
-* montrer la conf varnish avec le backend sell
+* montrer la conf varnish avec le backend sell (la déclaration du backend ET le fait d'utiliser le backend en fonction des urls)
 * montrer le fichier category l.706 avec la balise ESI pour le prix
 
 * changer le prix, et faire le refresh (ctrl maj R le navigateur garde toute la page)
@@ -81,5 +117,3 @@ Et montrer les logs apache de l'instance sell.
 == Exemple 4 : Reuse
 
 * Bloc de prix sur la page de catégorie et la page d'index, reuse sur l'index L.531
-
-
