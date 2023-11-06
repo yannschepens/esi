@@ -1,0 +1,53 @@
+.reveal.slide {
+    background-image: url("../images/onepoint_black.png"), url("../images/logo.png");
+    background-size: 200px, 150px;
+    background-position:  bottom center, bottom left;
+    background-repeat: no-repeat, no-repeat;
+    color: #D50880;
+}
+
+.entrypoint, .sponso {
+    #background-image: url("../images/intro-volcamp.png");
+    #background-size: cover;
+    padding: 0 !important;
+}
+
+.entrypoint * , .sponso *{
+    display: none;
+    opacity: 0 !important;
+}
+
+.sponso {
+    background-image: url("../images/sponsors.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+
+.reveal section img {
+    padding: 25px;
+    background: white;
+    border: none;
+    box-shadow: none;
+}
+
+.reveal section.no-img-background img {
+    padding: 25px;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.reveal h2, .reveal h3 {
+    text-transform: none;
+    color: #D50880
+}
+
+.reveal h3 {
+    font-size: 1.0em;
+}
+
+code {
+    font-size: 0.7em;
+}

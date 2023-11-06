@@ -1,10 +1,10 @@
 [.entrypoint]
 = !
 :source-highlighter: highlightjs
-:revealjs_theme: black
+:revealjs_theme: white
 :revealjs_progress: true
 :revealjs_history: true
-:customcss: ./styles/volcamp/stylesheets/style.css
+:customcss: ./styles/devfest-dijon/stylesheets/style.css
 :revealjsdir: ./node_modules/reveal.js
 :revealjs_defaultTiming: 40
 
