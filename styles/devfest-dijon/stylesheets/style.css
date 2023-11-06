@@ -41,7 +41,7 @@
 
 .reveal h2, .reveal h3 {
     text-transform: none;
-    color: #D50880
+    color: #D50880;
 }
 
 .reveal h3 {
@@ -50,4 +50,12 @@
 
 code {
     font-size: 0.7em;
+}
+
+.reveal .controls {
+    color: #D50880;
+}
+
+.reveal .progress {
+    color: #D50880;
 }
