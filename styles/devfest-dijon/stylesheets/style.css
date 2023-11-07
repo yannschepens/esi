@@ -1,8 +1,12 @@
+body {
+    background-color: #EFEFEF;
+}
+
 .reveal.slide {
-    background-image: url("../images/onepoint_black.png"), url("../images/logo.png");
-    background-size: 200px, 150px;
-    background-position:  bottom center, bottom left;
-    background-repeat: no-repeat, no-repeat;
+    background-image: url("../images/onepoint-white.png"), url("../images/gdg-dijon.png"), url("../images/background.png");
+    background-size: 200px, 150px, cover;
+    background-position:  bottom center, top left, bottom;
+    background-repeat: no-repeat, no-repeat, no-repeat;
     color: #D50880;
 }
 
@@ -12,9 +16,29 @@
     padding: 0 !important;
 }
 
-.entrypoint * , .sponso *{
+.sponso *{
     display: none;
     opacity: 0 !important;
+}
+
+.entrypoint h1 {
+    display: none;
+    opacity: 0 !important;
+}
+
+.entrypoint .yann-intro {
+    text-align: left;
+}
+
+.entrypoint .yann-intro-title {
+    margin-top: 100px;
+    font-weight: bold;
+}
+
+
+.entrypoint .yann-intro-event {
+    margin-top: 100px;
+    font-size: smaller;
 }
 
 .sponso {
@@ -22,8 +46,6 @@
     background-position: center center;
     background-repeat: no-repeat;
 }
-
-
 
 .reveal section img {
     padding: 25px;
@@ -53,9 +75,9 @@ code {
 }
 
 .reveal .controls {
-    color: #D50880;
+    color: #EFEFEF;
 }
 
 .reveal .progress {
-    color: #D50880;
+    color: #EFEFEF;
 }

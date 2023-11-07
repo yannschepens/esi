@@ -8,6 +8,18 @@
 :revealjsdir: ./node_modules/reveal.js
 :revealjs_defaultTiming: 40
 
+
+[cols="1,2",frame=none,grid=none]
+|===
+a|[.yann-intro]
+image::styles/devfest-dijon/images/yann-intro.png[yann]
+a|[.yann-intro-title]
+ESI: Le cache HTTP en petits bouts
+
+[.yann-intro-event]
+Devfest Dijon : 8 décembre 2023
+|===
+
 include::pages/start.adoc[leveloffset=+1]
 include::pages/http-cache.adoc[leveloffset=+1]
 include::pages/esi.adoc[leveloffset=+1]
