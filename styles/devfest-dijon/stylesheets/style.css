@@ -21,26 +21,6 @@ body {
     opacity: 0 !important;
 }
 
-.entrypoint h1 {
-    display: none;
-    opacity: 0 !important;
-}
-
-.entrypoint .yann-intro {
-    text-align: left;
-}
-
-.entrypoint .yann-intro-title {
-    margin-top: 100px;
-    font-weight: bold;
-}
-
-
-.entrypoint .yann-intro-event {
-    margin-top: 100px;
-    font-size: smaller;
-}
-
 .sponso {
     background-image: url("../images/sponsors.png");
     background-position: center center;
@@ -81,3 +61,47 @@ code {
 .reveal .progress {
     color: #EFEFEF;
 }
+
+
+/* First page design */
+
+.entrypoint h1 {
+    display: none;
+    opacity: 0 !important;
+}
+
+.entrypoint .tableblock td:first-child {
+    border-right: 1px solid;
+}
+
+.entrypoint .yann-intro, .entrypoint .yann-name, .entrypoint .yann-role {
+    text-align: center;
+}
+
+.entrypoint .yann-name {
+    font-size: smaller;
+    margin-top: -50px;
+}
+
+.entrypoint .yann-role {
+    font-size: x-large;
+}
+
+.entrypoint .imageblock.yann-intro img {
+    text-align: center;
+    width: 70%;
+    border-radius: 50%;
+}
+
+.entrypoint .yann-intro-title {
+    margin-top: 100px;
+    font-weight: bold;
+}
+
+
+.entrypoint .yann-intro-event {
+    margin-top: 100px;
+    font-size: smaller;
+}
+
+/* End of first page desing */

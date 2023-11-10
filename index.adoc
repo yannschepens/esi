@@ -8,11 +8,16 @@
 :revealjsdir: ./node_modules/reveal.js
 :revealjs_defaultTiming: 40
 
-
+[.intro-block]
 [cols="1,2",frame=none,grid=none]
 |===
 a|[.yann-intro]
-image::styles/devfest-dijon/images/yann-intro.png[yann]
+image::styles/devfest-dijon/images/yann-square.png[yann]
+[.yann-name]
+Yann Schepens
+[.yann-role]
+Tech Lead +
+@onepoint
 a|[.yann-intro-title]
 ESI: Le cache HTTP en petits bouts
 
