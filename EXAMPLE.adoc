@@ -105,7 +105,7 @@ Etape 4 : Modifier le contenu du user-header (en indiquant que généralement y'
 
 == Exemple 3 : micro frontend
 
-Etape 1 : On peut suivre le même principe mais en appelant carrement un autre service (aka)
+Etape 1 : On peut suivre le même principe mais en appelant carrement un autre service (aka micro frontend)
 
 * montrer l'url pour le prix : j'ai un autre service qui gère les prix
 * montrer la conf varnish avec le backend sell (la déclaration du backend ET le fait d'utiliser le backend en fonction des urls)
