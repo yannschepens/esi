@@ -1,9 +1,6 @@
 = Merci :)
 :imagesdir: assets/default/images
 
-[.sponso]
-== !
-
 == Sources
 
 * https://github.com/PixelRocket-Shop/alpine-html-bootstrap/
