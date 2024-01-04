@@ -4,7 +4,7 @@
 :revealjs_theme: white
 :revealjs_progress: true
 :revealjs_history: true
-:customcss: ./styles/devfest-dijon/stylesheets/style.css
+:customcss: ./styles/snowcamp/stylesheets/style.css
 :revealjsdir: ./node_modules/reveal.js
 :revealjs_defaultTiming: 40
 
@@ -12,7 +12,7 @@
 [cols="1,2",frame=none,grid=none]
 |===
 a|[.yann-intro]
-image::styles/devfest-dijon/images/yann-square.png[yann]
+image::styles/snowcamp/images/yann-square.png[yann]
 [.yann-name]
 Yann Schepens
 [.yann-role]
@@ -22,7 +22,7 @@ a|[.yann-intro-title]
 ESI: Le cache HTTP en petits bouts
 
 [.yann-intro-event]
-Devfest Dijon : 8 décembre 2023
+Snowcamp : 1 février 2024
 |===
 
 include::pages/start.adoc[leveloffset=+1]
