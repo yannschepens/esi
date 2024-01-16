@@ -6,5 +6,3 @@
 * https://github.com/PixelRocket-Shop/alpine-html-bootstrap/
 
 == Des questions ?
-
-image::openfeedback-dijon.png[]
