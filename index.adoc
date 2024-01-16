@@ -4,7 +4,7 @@
 :revealjs_theme: white
 :revealjs_progress: true
 :revealjs_history: true
-:customcss: ./styles/snowcamp/stylesheets/style.css
+:customcss: ./styles/tnt/stylesheets/style.css
 :revealjsdir: ./node_modules/reveal.js
 :revealjs_defaultTiming: 40
 
@@ -12,7 +12,7 @@
 [cols="1,2",frame=none,grid=none]
 |===
 a|[.yann-intro]
-image::styles/snowcamp/images/yann-square.png[yann]
+image::styles/tnt/images/yann-square.png[yann]
 [.yann-name]
 Yann Schepens
 [.yann-role]
@@ -22,7 +22,7 @@ a|[.yann-intro-title]
 ESI: Le cache HTTP en petits bouts
 
 [.yann-intro-event]
-Snowcamp : 1 février 2024
+Touraine Tech : 9 février 2024
 |===
 
 include::pages/sponso.adoc[leveloffset=+1]
