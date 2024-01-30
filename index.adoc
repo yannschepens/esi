@@ -25,6 +25,7 @@ ESI: Le cache HTTP en petits bouts
 Snowcamp : 1 février 2024
 |===
 
+include::pages/sponso.adoc[leveloffset=+1]
 include::pages/start.adoc[leveloffset=+1]
 include::pages/http-cache.adoc[leveloffset=+1]
 include::pages/esi.adoc[leveloffset=+1]

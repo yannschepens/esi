@@ -1,0 +1,5 @@
+= !
+
+:imagesdir: styles/snowcamp/images/
+
+image::sponso.png[]

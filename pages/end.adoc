@@ -6,3 +6,5 @@
 * https://github.com/PixelRocket-Shop/alpine-html-bootstrap/
 
 == Des questions ?
+
+image::qrcode.png[]
