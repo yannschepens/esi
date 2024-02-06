@@ -1,5 +1,5 @@
 = !
 
-:imagesdir: styles/snowcamp/images/
+:imagesdir: styles/tnt/images/
 
 image::sponso.png[]
