@@ -9,6 +9,7 @@
       "patterns": [
         "."
       ],
+      "ignore": "dist/",
       "extensions": "js,adoc,css",
       "quiet": false
     }

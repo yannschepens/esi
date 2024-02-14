@@ -2,3 +2,5 @@
 /index.html
 *.bkp
 *.dtmp
+/.idea
+/dist
